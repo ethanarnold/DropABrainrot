@@ -1,0 +1,22 @@
+# Roblox place files (you generally don't commit these)
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+
+# Project place file
+/DropABrainrot.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+sourcemap.json
