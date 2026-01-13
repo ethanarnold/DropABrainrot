@@ -1,1 +1,5 @@
-print("Hello world, from client!")
+--!strict
+--[[
+	Client entry point
+	Initializes client-side services
+]]

@@ -121,3 +121,4 @@ _Use this section to track progress and leave notes for future sessions._
 - Created PlayerData.luau with default data template
 - Implemented DataService with ProfileService integration
 - Updated server init to initialize DataService
+- **All tests passed:** Selene linting clean, Wally install successful, Rojo sync verified, DataService initializes correctly, player profiles load on join. ProfileService gracefully falls back to mock mode in Studio (expected behavior).
