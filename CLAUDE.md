@@ -37,3 +37,35 @@ This project uses the standard Rojo project structure defined in `default.projec
 - `*.client.luau` - Client scripts (run only on client)
 - `*.luau` - ModuleScripts (shared code/libraries)
 - `init.server.luau` / `init.client.luau` - Entry point scripts that become the parent folder's script
+
+## Asset Locations
+
+- **Brainrot models**: `ServerStorage.Brainrots` - Model names use underscore format (e.g., `Brainrot_God_Lucky_Block`)
+- **Wally packages**: `ServerScriptService.Packages` - Server-side dependencies installed via Wally
+
+## Dependencies
+
+Managed via Wally (`wally.toml`):
+- `ProfileService` - `alreadypro/profileservice@1.0.4` for player data persistence
+
+Run `wally install` after cloning to fetch dependencies.
+
+## Data Architecture
+
+- `src/shared/Types.luau` - Shared type definitions
+- `src/shared/Data/Brainrots.luau` - All 75 brainrot definitions (IDs match ServerStorage model names)
+- `src/shared/Data/Bags.luau` - Bag level definitions
+- `src/shared/Data/Upgrades.luau` - Upgrade definitions
+- `src/shared/PlayerData.luau` - Player data schema and defaults
+- `src/server/Services/DataService.luau` - ProfileService-based data persistence
+
+## Git Workflow
+
+1. Create feature branches for new work (e.g., `feature/phase1-data-layer`)
+2. Commit changes incrementally with descriptive messages
+3. Push and create PRs via `gh pr create`
+4. PRs merge into `main`
+
+## Linting
+
+Run `selene src/` to lint. Config is in `selene.toml` with `std = "roblox"`.
