@@ -12,7 +12,7 @@
         "$path": "src/server"
       },
       "Packages": {
-        "$path": "Packages"
+        "$path": "ServerPackages"
       }
     },
     "StarterPlayer": {
