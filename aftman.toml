@@ -10,3 +10,6 @@ stylua = "JohnnyMorganz/StyLua@0.20.0"
 
 # Linter
 selene = "Kampfkarren/selene@0.27.1"
+
+# Test runtime
+lune = "lune-org/lune@0.8.9"
