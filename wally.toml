@@ -1,0 +1,8 @@
+[package]
+name = "ethanarnold/drop-a-brainrot"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "server"
+
+[server-dependencies]
+ProfileService = "alreadypro/profileservice@1.0.4"

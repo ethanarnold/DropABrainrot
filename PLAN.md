@@ -2,19 +2,19 @@
 
 This plan tracks implementation progress across multiple sessions.
 
-## Phase 1: Data Layer (Foundation)
+## Phase 1: Data Layer (Foundation) ✅
 
-- [ ] Define shared types/constants in `src/shared/`
-  - [ ] Brainrot definitions (id, name, level, rarity, incomePerSecond)
-  - [ ] Bag definitions (level, capacity, maxBrainrotLevel)
-  - [ ] Upgrade definitions (costs, effects)
-- [ ] Create PlayerData module
-  - [ ] Data schema (currency, bagLevel, bagContents, plotSlots, placedBrainrots, upgrades)
-  - [ ] Default player data template
-- [ ] Implement DataStore persistence on server
-  - [ ] Load on PlayerAdded
-  - [ ] Save on PlayerRemoving and periodic autosave
-  - [ ] Session locking to prevent data loss
+- [x] Define shared types/constants in `src/shared/`
+  - [x] Brainrot definitions (id, name, level, rarity, incomePerSecond)
+  - [x] Bag definitions (level, capacity, maxBrainrotLevel)
+  - [x] Upgrade definitions (costs, effects)
+- [x] Create PlayerData module
+  - [x] Data schema (currency, bagLevel, bagContents, plotSlots, placedBrainrots, upgrades)
+  - [x] Default player data template
+- [x] Implement DataStore persistence on server
+  - [x] Load on PlayerAdded
+  - [x] Save on PlayerRemoving and periodic autosave
+  - [x] Session locking to prevent data loss (via ProfileService)
 
 ## Phase 2: Core Systems
 
@@ -111,4 +111,13 @@ This plan tracks implementation progress across multiple sessions.
 
 _Use this section to track progress and leave notes for future sessions._
 
-**Session 1 (Current):** Created initial project structure and planning documents.
+**Session 1:** Created initial project structure and planning documents.
+
+**Session 2:** Completed Phase 1 (Data Layer):
+- Created BRAINROTS.md with all 75 brainrots and rarity assignments
+- Added ProfileService via Wally for data persistence
+- Created Types.luau with all shared type definitions
+- Created Data modules: Brainrots.luau, Bags.luau, Upgrades.luau
+- Created PlayerData.luau with default data template
+- Implemented DataService with ProfileService integration
+- Updated server init to initialize DataService
