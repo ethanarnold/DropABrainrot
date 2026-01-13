@@ -16,9 +16,9 @@ PlayerData.DEFAULT_DATA = {
 	-- Currency
 	currency = 0,
 
-	-- Bag
+	-- Bag (level determines pickup eligibility and inventory capacity)
 	bagLevel = 1,
-	bagContents = {},
+	inventory = {},
 
 	-- Plot
 	plotSlots = 1,
@@ -51,7 +51,7 @@ function PlayerData.getDefaultData(): PlayerData
 	local data: PlayerData = {
 		currency = PlayerData.DEFAULT_DATA.currency,
 		bagLevel = PlayerData.DEFAULT_DATA.bagLevel,
-		bagContents = {},
+		inventory = {},
 		plotSlots = PlayerData.DEFAULT_DATA.plotSlots,
 		placedBrainrots = {},
 		accumulatedIncome = PlayerData.DEFAULT_DATA.accumulatedIncome,
