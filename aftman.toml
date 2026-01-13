@@ -1,0 +1,12 @@
+[tools]
+# Rojo (CLI)
+rojo = "rojo-rbx/rojo@7.6.0"
+
+# Package manager (optional but common in Rojo stacks)
+wally = "upliftgames/wally@0.3.2"
+
+# Formatter
+stylua = "JohnnyMorganz/StyLua@0.20.0"
+
+# Linter
+selene = "Kampfkarren/selene@0.27.1"
