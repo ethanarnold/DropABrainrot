@@ -22,6 +22,7 @@ type RemoteTable = {
 	InventoryUpdated: RemoteEvent,
 	PlotUpdated: RemoteEvent,
 	ShowMessage: RemoteEvent,
+	ToggleFly: RemoteEvent,
 
 	-- Request/Response functions
 	GetPlayerData: RemoteFunction,
@@ -42,6 +43,7 @@ local REMOTE_EVENTS = {
 	"InventoryUpdated", -- (inventory: {BrainrotId}) - Inventory changed
 	"PlotUpdated", -- (plotState: {[number]: BrainrotId}) - Plot state changed
 	"ShowMessage", -- (message: string, duration: number?) - Display brief UI message
+	"ToggleFly", -- (enabled: boolean) - Toggle fly mode
 }
 
 local REMOTE_FUNCTIONS = {
