@@ -161,7 +161,6 @@ local function onPlayerChatted(player: Player, message: string)
 		spawnPos = Vector3.new(spawnPos.X, spawnPos.Y + 2, spawnPos.Z)
 
 		DebugService.spawnBrainrot(brainrotId, spawnPos)
-
 	elseif command == "/spawnat" then
 		local brainrotId = args[2]
 		local x = tonumber(args[3])
@@ -174,10 +173,8 @@ local function onPlayerChatted(player: Player, message: string)
 		end
 
 		DebugService.spawnBrainrot(brainrotId, Vector3.new(x, y, z))
-
 	elseif command == "/clearbrainrots" then
 		DebugService.clearBrainrots()
-
 	elseif command == "/givecurrency" then
 		local amount = tonumber(args[2])
 		if not amount then
@@ -187,7 +184,6 @@ local function onPlayerChatted(player: Player, message: string)
 
 		CurrencyService.add(player, amount)
 		print(`[DebugService] Gave {amount} currency to {player.Name}`)
-
 	elseif command == "/listbrainrots" then
 		print("[DebugService] Available brainrots:")
 		for id, def in Brainrots do

@@ -17,11 +17,11 @@ local PlotService = require(script.Services.PlotService)
 local DebugService = require(script.Services.DebugService)
 
 -- Initialize services in dependency order
-DataService.init()      -- Must be first (others depend on player data)
-CurrencyService.init()  -- Depends on DataService
-BagService.init()       -- Depends on DataService, CurrencyService
-PlotService.init()      -- Depends on DataService, BagService, CurrencyService
-DebugService.init()     -- Debug commands for testing
+DataService.init() -- Must be first (others depend on player data)
+CurrencyService.init() -- Depends on DataService
+BagService.init() -- Depends on DataService, CurrencyService
+PlotService.init() -- Depends on DataService, BagService, CurrencyService
+DebugService.init() -- Debug commands for testing
 
 -- Set up GetPlayerData remote function
 local Remotes = require(ReplicatedStorage.Shared.Remotes)

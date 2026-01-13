@@ -78,21 +78,14 @@ local function createMessage(text: string, duration: number): Frame
 	-- Schedule removal
 	task.delay(duration, function()
 		-- Animate out
-		local tweenOut = TweenService:Create(
-			messageFrame,
-			TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
-			{
+		local tweenOut =
+			TweenService:Create(messageFrame, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
 				Position = UDim2.new(0.5, -150, 0, messageFrame.Position.Y.Offset - 20),
 				BackgroundTransparency = 1,
-			}
-		)
+			})
 
 		-- Fade text
-		local textFade = TweenService:Create(
-			textLabel,
-			TweenInfo.new(0.3),
-			{ TextTransparency = 1 }
-		)
+		local textFade = TweenService:Create(textLabel, TweenInfo.new(0.3), { TextTransparency = 1 })
 
 		tweenOut:Play()
 		textFade:Play()

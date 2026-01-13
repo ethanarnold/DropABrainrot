@@ -32,22 +32,22 @@ type RemoteTable = {
 -- Remote definitions with their types
 local REMOTE_EVENTS = {
 	-- Client to Server
-	"PickupBrainrot",     -- (worldBrainrotId: string) - Request pickup from world
-	"PlaceBrainrot",      -- (inventoryIndex: number, slotIndex: number) - Place on plot
-	"RemoveBrainrot",     -- (slotIndex: number) - Remove from plot back to inventory
-	"CollectIncome",      -- () - Collect accumulated income
+	"PickupBrainrot", -- (worldBrainrotId: string) - Request pickup from world
+	"PlaceBrainrot", -- (inventoryIndex: number, slotIndex: number) - Place on plot
+	"RemoveBrainrot", -- (slotIndex: number) - Remove from plot back to inventory
+	"CollectIncome", -- () - Collect accumulated income
 
 	-- Server to Client
-	"CurrencyUpdated",    -- (newBalance: number) - Currency changed
-	"InventoryUpdated",   -- (inventory: {BrainrotId}) - Inventory changed
-	"PlotUpdated",        -- (plotState: {[number]: BrainrotId}) - Plot state changed
-	"ShowMessage",        -- (message: string, duration: number?) - Display brief UI message
+	"CurrencyUpdated", -- (newBalance: number) - Currency changed
+	"InventoryUpdated", -- (inventory: {BrainrotId}) - Inventory changed
+	"PlotUpdated", -- (plotState: {[number]: BrainrotId}) - Plot state changed
+	"ShowMessage", -- (message: string, duration: number?) - Display brief UI message
 }
 
 local REMOTE_FUNCTIONS = {
-	"GetPlayerData",      -- () -> PlayerData
-	"GetInventory",       -- () -> {BrainrotId}
-	"GetPlotState",       -- () -> {[number]: BrainrotId}
+	"GetPlayerData", -- () -> PlayerData
+	"GetInventory", -- () -> {BrainrotId}
+	"GetPlotState", -- () -> {[number]: BrainrotId}
 }
 
 local Remotes: RemoteTable = {} :: RemoteTable
