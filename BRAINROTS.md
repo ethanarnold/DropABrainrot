@@ -19,7 +19,7 @@ This document lists all brainrots in the game, organized by rarity.
 
 | ID | Name | Income/sec |
 |----|------|------------|
-| brainrot_god_lucky_block | Brainrot God Lucky Block | $5,000 |
+| Brainrot_God_Lucky_Block | Brainrot God Lucky Block | $5,000 |
 
 ---
 
@@ -27,8 +27,8 @@ This document lists all brainrots in the game, organized by rarity.
 
 | ID | Name | Income/sec |
 |----|------|------------|
-| mythic_lucky_block | Mythic Lucky Block | $1,000 |
-| la_grande_combinasion | La Grande Combinasion | $1,000 |
+| Mythic_Lucky_Block | Mythic Lucky Block | $1,000 |
+| La_Grande_Combinasion | La Grande Combinasion | $1,000 |
 
 ---
 
@@ -36,9 +36,9 @@ This document lists all brainrots in the game, organized by rarity.
 
 | ID | Name | Income/sec |
 |----|------|------------|
-| secret_lucky_block | Secret Lucky Block | $250 |
-| bombardiro_crocodilo | Bombardiro Crocodilo | $250 |
-| nuclearo_dinossauro | Nuclearo Dinossauro | $250 |
+| Secret_Lucky_Block | Secret Lucky Block | $250 |
+| Bombardiro_Crocodilo | Bombardiro Crocodilo | $250 |
+| Nuclearo_Dinossauro | Nuclearo Dinossauro | $250 |
 
 ---
 
@@ -46,11 +46,11 @@ This document lists all brainrots in the game, organized by rarity.
 
 | ID | Name | Income/sec |
 |----|------|------------|
-| trenostruzzo_turbo_3000 | Trenostruzzo Turbo 3000 | $100 |
-| tung_tung_tung_sahur | Tung Tung Tung Sahur | $75 |
-| ta_ta_ta_ta_sahur | Ta Ta Ta Ta Sahur | $75 |
-| garama_and_madundung | Garama and Madundung | $60 |
-| odin_din_din_dun | Odin Din Din Dun | $50 |
+| Trenostruzzo_Turbo_3000 | Trenostruzzo Turbo 3000 | $100 |
+| Tung_Tung_Tung_Sahur | Tung Tung Tung Sahur | $75 |
+| Ta_Ta_Ta_Ta_Sahur | Ta Ta Ta Ta Sahur | $75 |
+| Garama_and_Madundung | Garama and Madundung | $60 |
+| Odin_Din_Din_Dun | Odin Din Din Dun | $50 |
 
 ---
 
@@ -58,21 +58,21 @@ This document lists all brainrots in the game, organized by rarity.
 
 | ID | Name | Income/sec |
 |----|------|------------|
-| las_tralaleritas | Las Tralaleritas | $20 |
-| los_tralaleritos | Los Tralaleritos | $20 |
-| los_crocodillitos | Los Crocodillitos | $18 |
-| las_vaquitas_saturnitas | Las Vaquitas Saturnitas | $18 |
-| la_vacca_saturno_saturnita | La Vacca Saturno Saturnita | $16 |
-| cappuccino_assassino | Cappuccino Assassino | $15 |
-| trulimero_trulicina | Trulimero Trulicina | $14 |
-| brri_brri_bicus_dicus_bombicus | Brri Brri Bicus Dicus Bombicus | $14 |
-| tric_trac_baraboom | Tric Trac Baraboom | $12 |
-| lirilì_larilà | Lirilì Larilà | $12 |
-| cocofanto_elefanto | Cocofanto Elefanto | $11 |
-| gorillo_watermelondrillo | Gorillo Watermelondrillo | $11 |
-| glorbo_fruttodrillo | Glorbo Fruttodrillo | $10 |
-| svinina_bombardino | Svinina Bombardino | $10 |
-| chef_crabracadabra | Chef Crabracadabra | $10 |
+| Las_Tralaleritas | Las Tralaleritas | $20 |
+| Los_Tralaleritos | Los Tralaleritos | $20 |
+| Los_Crocodillitos | Los Crocodillitos | $18 |
+| Las_Vaquitas_Saturnitas | Las Vaquitas Saturnitas | $18 |
+| La_Vacca_Saturno_Saturnita | La Vacca Saturno Saturnita | $16 |
+| Cappuccino_Assassino | Cappuccino Assassino | $15 |
+| Trulimero_Trulicina | Trulimero Trulicina | $14 |
+| Brri_Brri_Bicus_Dicus_Bombicus | Brri Brri Bicus Dicus Bombicus | $14 |
+| Tric_Trac_Baraboom | Tric Trac Baraboom | $12 |
+| Lirili_Larila | Lirili Larila | $12 |
+| Cocofanto_Elefanto | Cocofanto Elefanto | $11 |
+| Gorillo_Watermelondrillo | Gorillo Watermelondrillo | $11 |
+| Glorbo_Fruttodrillo | Glorbo Fruttodrillo | $10 |
+| Svinina_Bombardino | Svinina Bombardino | $10 |
+| Chef_Crabracadabra | Chef Crabracadabra | $10 |
 
 ---
 
@@ -80,58 +80,58 @@ This document lists all brainrots in the game, organized by rarity.
 
 | ID | Name | Income/sec |
 |----|------|------------|
-| tralalero_tralala | Tralalero Tralala | $5 |
-| brr_brr_patapim | Brr Brr Patapim | $5 |
-| trippi_troppi | Trippi Troppi | $5 |
-| boneca_ambalabu | Boneca Ambalabu | $5 |
-| espresso_signora | Espresso Signora | $4 |
-| cavallo_virtuoso | Cavallo Virtuoso | $4 |
-| burbaloni_loliloli | Burbaloni Loliloli | $4 |
-| bombombini_gusini | Bombombini Gusini | $4 |
-| chimpanzini_bananini | Chimpanzini Bananini | $4 |
-| chimpanzini_spiderini | Chimpanzini Spiderini | $4 |
-| orangutini_ananassini | Orangutini Ananassini | $4 |
-| pandaccini_bananini | Pandaccini Bananini | $4 |
-| ballerina_cappuccina | Ballerina Cappuccina | $3 |
-| ballerino_lololo | Ballerino Lololo | $3 |
-| bambini_crostini | Bambini Crostini | $3 |
-| bananita_dolphinita | Bananita Dolphinita | $3 |
-| bandito_bobritto | Bandito Bobritto | $3 |
-| blueberrinni_octopusini | Blueberrinni Octopusini | $3 |
-| avocadini_guffo | Avocadini Guffo | $3 |
-| gattatino_neonino | Gattatino Neonino | $3 |
-| gattatino_nyanino | Gattatino Nyanino | $3 |
-| girafa_celestre | Girafa Celestre | $3 |
-| graipuss_medussi | Graipuss Medussi | $3 |
-| lionel_cactuseli | Lionel Cactuseli | $3 |
-| noobini_pizzanini | Noobini Pizzanini | $3 |
-| perochello_lemonchello | Perochello Lemonchello | $3 |
-| piccione_macchina | Piccione Macchina | $3 |
-| pipi_kiwi | Pipi Kiwi | $3 |
-| rhino_toasterino | Rhino Toasterino | $3 |
-| salamino_penguino | Salamino Penguino | $3 |
-| sammyni_spyderini | Sammyni Spyderini | $3 |
-| spioniro_golubiro | Spioniro Golubiro | $3 |
-| statutino_libertino | Statutino Libertino | $3 |
-| strawberrelli_flamingelli | Strawberrelli Flamingelli | $3 |
-| talpa_di_fero | Talpa Di Fero | $3 |
-| tigrilini_watermelini | Tigrilini Watermelini | $3 |
-| tigroligre_frutonni | Tigroligre Frutonni | $3 |
-| torrtuginni_dragonfrutini | Torrtuginni Dragonfrutini | $3 |
-| unclito_samito | Unclito Samito | $3 |
-| zibra_zubra_zibralini | Zibra Zubra Zibralini | $3 |
-| cacto_hipopotamo | Cacto Hipopotamo | $2 |
-| chicleteira_bicicleteira | Chicleteira Bicicleteira | $2 |
-| fluri_flura | Fluri Flura | $2 |
-| frigo_camelo | Frigo Camelo | $2 |
-| gangster_footera | Gangster Footera | $2 |
-| mat_teo | Mat Teo | $2 |
-| orcalero_orcala | Orcalero Orcala | $2 |
-| pot_hotspot | Pot Hotspot | $2 |
-| tim_cheese | Tim Cheese | $1 |
+| Tralalero_Tralala | Tralalero Tralala | $5 |
+| Brr_Brr_Patapim | Brr Brr Patapim | $5 |
+| Trippi_Troppi | Trippi Troppi | $5 |
+| Boneca_Ambalabu | Boneca Ambalabu | $5 |
+| Espresso_Signora | Espresso Signora | $4 |
+| Cavallo_Virtuoso | Cavallo Virtuoso | $4 |
+| Burbaloni_Loliloli | Burbaloni Loliloli | $4 |
+| Bombombini_Gusini | Bombombini Gusini | $4 |
+| Chimpanzini_Bananini | Chimpanzini Bananini | $4 |
+| Chimpanzini_Spiderini | Chimpanzini Spiderini | $4 |
+| Orangutini_Ananassini | Orangutini Ananassini | $4 |
+| Pandaccini_Bananini | Pandaccini Bananini | $4 |
+| Ballerina_Cappuccina | Ballerina Cappuccina | $3 |
+| Ballerino_Lololo | Ballerino Lololo | $3 |
+| Bambini_Crostini | Bambini Crostini | $3 |
+| Bananita_Dolphinita | Bananita Dolphinita | $3 |
+| Bandito_Bobritto | Bandito Bobritto | $3 |
+| Blueberrinni_Octopusini | Blueberrinni Octopusini | $3 |
+| Avocadini_Guffo | Avocadini Guffo | $3 |
+| Gattatino_Neonino | Gattatino Neonino | $3 |
+| Gattatino_Nyanino | Gattatino Nyanino | $3 |
+| Girafa_Celestre | Girafa Celestre | $3 |
+| Graipuss_Medussi | Graipuss Medussi | $3 |
+| Lionel_Cactuseli | Lionel Cactuseli | $3 |
+| Noobini_Pizzanini | Noobini Pizzanini | $3 |
+| Perochello_Lemonchello | Perochello Lemonchello | $3 |
+| Piccione_Macchina | Piccione Macchina | $3 |
+| Pipi_Kiwi | Pipi Kiwi | $3 |
+| Rhino_Toasterino | Rhino Toasterino | $3 |
+| Salamino_Penguino | Salamino Penguino | $3 |
+| Sammyni_Spyderini | Sammyni Spyderini | $3 |
+| Spioniro_Golubiro | Spioniro Golubiro | $3 |
+| Statutino_Libertino | Statutino Libertino | $3 |
+| Strawberrelli_Flamingelli | Strawberrelli Flamingelli | $3 |
+| Talpa_Di_Fero | Talpa Di Fero | $3 |
+| Tigrilini_Watermelini | Tigrilini Watermelini | $3 |
+| Tigroligre_Frutonni | Tigroligre Frutonni | $3 |
+| Torrtuginni_Dragonfrutini | Torrtuginni Dragonfrutini | $3 |
+| Unclito_Samito | Unclito Samito | $3 |
+| Zibra_Zubra_Zibralini | Zibra Zubra Zibralini | $3 |
+| Cacto_Hipopotamo | Cacto Hipopotamo | $2 |
+| Chicleteira_Bicicleteira | Chicleteira Bicicleteira | $2 |
+| Fluri_flura | Fluri flura | $2 |
+| Frigo_Camelo | Frigo Camelo | $2 |
+| Gangster_Footera | Gangster Footera | $2 |
+| Mat_teo | Mat teo | $2 |
+| Orcalero_Orcala | Orcalero Orcala | $2 |
+| Pot_Hotspot | Pot Hotspot | $2 |
+| Tim_Cheese | Tim Cheese | $1 |
 
 ---
 
 ## Asset Locations
 
-All brainrot models are located in `ReplicatedStorage.Assets.Brainrots` with folder names matching the brainrot IDs above.
+All brainrot models are located in `ServerStorage.Brainrots` with folder names matching the brainrot IDs above.

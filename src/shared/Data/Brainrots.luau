@@ -2,6 +2,7 @@
 --[[
 	Brainrots.luau
 	All brainrot definitions with their rarities, levels, and income values
+	IDs match model names in ServerStorage.Brainrots
 ]]
 
 local Types = require(script.Parent.Parent.Types)
@@ -10,8 +11,8 @@ export type BrainrotDefinition = Types.BrainrotDefinition
 
 local Brainrots: { [string]: BrainrotDefinition } = {
 	-- Mythic (Level 6) - $5,000/sec
-	brainrot_god_lucky_block = {
-		id = "brainrot_god_lucky_block",
+	Brainrot_God_Lucky_Block = {
+		id = "Brainrot_God_Lucky_Block",
 		name = "Brainrot God Lucky Block",
 		rarity = "Mythic",
 		level = 6,
@@ -19,15 +20,15 @@ local Brainrots: { [string]: BrainrotDefinition } = {
 	},
 
 	-- Legendary (Level 5) - $1,000/sec
-	mythic_lucky_block = {
-		id = "mythic_lucky_block",
+	Mythic_Lucky_Block = {
+		id = "Mythic_Lucky_Block",
 		name = "Mythic Lucky Block",
 		rarity = "Legendary",
 		level = 5,
 		incomePerSecond = 1000,
 	},
-	la_grande_combinasion = {
-		id = "la_grande_combinasion",
+	La_Grande_Combinasion = {
+		id = "La_Grande_Combinasion",
 		name = "La Grande Combinasion",
 		rarity = "Legendary",
 		level = 5,
@@ -35,22 +36,22 @@ local Brainrots: { [string]: BrainrotDefinition } = {
 	},
 
 	-- Epic (Level 4) - $250/sec
-	secret_lucky_block = {
-		id = "secret_lucky_block",
+	Secret_Lucky_Block = {
+		id = "Secret_Lucky_Block",
 		name = "Secret Lucky Block",
 		rarity = "Epic",
 		level = 4,
 		incomePerSecond = 250,
 	},
-	bombardiro_crocodilo = {
-		id = "bombardiro_crocodilo",
+	Bombardiro_Crocodilo = {
+		id = "Bombardiro_Crocodilo",
 		name = "Bombardiro Crocodilo",
 		rarity = "Epic",
 		level = 4,
 		incomePerSecond = 250,
 	},
-	nuclearo_dinossauro = {
-		id = "nuclearo_dinossauro",
+	Nuclearo_Dinossauro = {
+		id = "Nuclearo_Dinossauro",
 		name = "Nuclearo Dinossauro",
 		rarity = "Epic",
 		level = 4,
@@ -58,36 +59,36 @@ local Brainrots: { [string]: BrainrotDefinition } = {
 	},
 
 	-- Rare (Level 3) - $50-100/sec
-	trenostruzzo_turbo_3000 = {
-		id = "trenostruzzo_turbo_3000",
+	Trenostruzzo_Turbo_3000 = {
+		id = "Trenostruzzo_Turbo_3000",
 		name = "Trenostruzzo Turbo 3000",
 		rarity = "Rare",
 		level = 3,
 		incomePerSecond = 100,
 	},
-	tung_tung_tung_sahur = {
-		id = "tung_tung_tung_sahur",
+	Tung_Tung_Tung_Sahur = {
+		id = "Tung_Tung_Tung_Sahur",
 		name = "Tung Tung Tung Sahur",
 		rarity = "Rare",
 		level = 3,
 		incomePerSecond = 75,
 	},
-	ta_ta_ta_ta_sahur = {
-		id = "ta_ta_ta_ta_sahur",
+	Ta_Ta_Ta_Ta_Sahur = {
+		id = "Ta_Ta_Ta_Ta_Sahur",
 		name = "Ta Ta Ta Ta Sahur",
 		rarity = "Rare",
 		level = 3,
 		incomePerSecond = 75,
 	},
-	garama_and_madundung = {
-		id = "garama_and_madundung",
+	Garama_and_Madundung = {
+		id = "Garama_and_Madundung",
 		name = "Garama and Madundung",
 		rarity = "Rare",
 		level = 3,
 		incomePerSecond = 60,
 	},
-	odin_din_din_dun = {
-		id = "odin_din_din_dun",
+	Odin_Din_Din_Dun = {
+		id = "Odin_Din_Din_Dun",
 		name = "Odin Din Din Dun",
 		rarity = "Rare",
 		level = 3,
@@ -95,106 +96,106 @@ local Brainrots: { [string]: BrainrotDefinition } = {
 	},
 
 	-- Uncommon (Level 2) - $10-20/sec
-	las_tralaleritas = {
-		id = "las_tralaleritas",
+	Las_Tralaleritas = {
+		id = "Las_Tralaleritas",
 		name = "Las Tralaleritas",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 20,
 	},
-	los_tralaleritos = {
-		id = "los_tralaleritos",
+	Los_Tralaleritos = {
+		id = "Los_Tralaleritos",
 		name = "Los Tralaleritos",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 20,
 	},
-	los_crocodillitos = {
-		id = "los_crocodillitos",
+	Los_Crocodillitos = {
+		id = "Los_Crocodillitos",
 		name = "Los Crocodillitos",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 18,
 	},
-	las_vaquitas_saturnitas = {
-		id = "las_vaquitas_saturnitas",
+	Las_Vaquitas_Saturnitas = {
+		id = "Las_Vaquitas_Saturnitas",
 		name = "Las Vaquitas Saturnitas",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 18,
 	},
-	la_vacca_saturno_saturnita = {
-		id = "la_vacca_saturno_saturnita",
+	La_Vacca_Saturno_Saturnita = {
+		id = "La_Vacca_Saturno_Saturnita",
 		name = "La Vacca Saturno Saturnita",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 16,
 	},
-	cappuccino_assassino = {
-		id = "cappuccino_assassino",
+	Cappuccino_Assassino = {
+		id = "Cappuccino_Assassino",
 		name = "Cappuccino Assassino",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 15,
 	},
-	trulimero_trulicina = {
-		id = "trulimero_trulicina",
+	Trulimero_Trulicina = {
+		id = "Trulimero_Trulicina",
 		name = "Trulimero Trulicina",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 14,
 	},
-	brri_brri_bicus_dicus_bombicus = {
-		id = "brri_brri_bicus_dicus_bombicus",
+	Brri_Brri_Bicus_Dicus_Bombicus = {
+		id = "Brri_Brri_Bicus_Dicus_Bombicus",
 		name = "Brri Brri Bicus Dicus Bombicus",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 14,
 	},
-	tric_trac_baraboom = {
-		id = "tric_trac_baraboom",
+	Tric_Trac_Baraboom = {
+		id = "Tric_Trac_Baraboom",
 		name = "Tric Trac Baraboom",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 12,
 	},
-	lirili_larila = {
-		id = "lirili_larila",
-		name = "Lirilì Larilà",
+	Lirili_Larila = {
+		id = "Lirili_Larila",
+		name = "Lirili Larila",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 12,
 	},
-	cocofanto_elefanto = {
-		id = "cocofanto_elefanto",
+	Cocofanto_Elefanto = {
+		id = "Cocofanto_Elefanto",
 		name = "Cocofanto Elefanto",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 11,
 	},
-	gorillo_watermelondrillo = {
-		id = "gorillo_watermelondrillo",
+	Gorillo_Watermelondrillo = {
+		id = "Gorillo_Watermelondrillo",
 		name = "Gorillo Watermelondrillo",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 11,
 	},
-	glorbo_fruttodrillo = {
-		id = "glorbo_fruttodrillo",
+	Glorbo_Fruttodrillo = {
+		id = "Glorbo_Fruttodrillo",
 		name = "Glorbo Fruttodrillo",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 10,
 	},
-	svinina_bombardino = {
-		id = "svinina_bombardino",
+	Svinina_Bombardino = {
+		id = "Svinina_Bombardino",
 		name = "Svinina Bombardino",
 		rarity = "Uncommon",
 		level = 2,
 		incomePerSecond = 10,
 	},
-	chef_crabracadabra = {
-		id = "chef_crabracadabra",
+	Chef_Crabracadabra = {
+		id = "Chef_Crabracadabra",
 		name = "Chef Crabracadabra",
 		rarity = "Uncommon",
 		level = 2,
@@ -202,344 +203,344 @@ local Brainrots: { [string]: BrainrotDefinition } = {
 	},
 
 	-- Common (Level 1) - $1-5/sec
-	tralalero_tralala = {
-		id = "tralalero_tralala",
+	Tralalero_Tralala = {
+		id = "Tralalero_Tralala",
 		name = "Tralalero Tralala",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 5,
 	},
-	brr_brr_patapim = {
-		id = "brr_brr_patapim",
+	Brr_Brr_Patapim = {
+		id = "Brr_Brr_Patapim",
 		name = "Brr Brr Patapim",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 5,
 	},
-	trippi_troppi = {
-		id = "trippi_troppi",
+	Trippi_Troppi = {
+		id = "Trippi_Troppi",
 		name = "Trippi Troppi",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 5,
 	},
-	boneca_ambalabu = {
-		id = "boneca_ambalabu",
+	Boneca_Ambalabu = {
+		id = "Boneca_Ambalabu",
 		name = "Boneca Ambalabu",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 5,
 	},
-	espresso_signora = {
-		id = "espresso_signora",
+	Espresso_Signora = {
+		id = "Espresso_Signora",
 		name = "Espresso Signora",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 4,
 	},
-	cavallo_virtuoso = {
-		id = "cavallo_virtuoso",
+	Cavallo_Virtuoso = {
+		id = "Cavallo_Virtuoso",
 		name = "Cavallo Virtuoso",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 4,
 	},
-	burbaloni_loliloli = {
-		id = "burbaloni_loliloli",
+	Burbaloni_Loliloli = {
+		id = "Burbaloni_Loliloli",
 		name = "Burbaloni Loliloli",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 4,
 	},
-	bombombini_gusini = {
-		id = "bombombini_gusini",
+	Bombombini_Gusini = {
+		id = "Bombombini_Gusini",
 		name = "Bombombini Gusini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 4,
 	},
-	chimpanzini_bananini = {
-		id = "chimpanzini_bananini",
+	Chimpanzini_Bananini = {
+		id = "Chimpanzini_Bananini",
 		name = "Chimpanzini Bananini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 4,
 	},
-	chimpanzini_spiderini = {
-		id = "chimpanzini_spiderini",
+	Chimpanzini_Spiderini = {
+		id = "Chimpanzini_Spiderini",
 		name = "Chimpanzini Spiderini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 4,
 	},
-	orangutini_ananassini = {
-		id = "orangutini_ananassini",
+	Orangutini_Ananassini = {
+		id = "Orangutini_Ananassini",
 		name = "Orangutini Ananassini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 4,
 	},
-	pandaccini_bananini = {
-		id = "pandaccini_bananini",
+	Pandaccini_Bananini = {
+		id = "Pandaccini_Bananini",
 		name = "Pandaccini Bananini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 4,
 	},
-	ballerina_cappuccina = {
-		id = "ballerina_cappuccina",
+	Ballerina_Cappuccina = {
+		id = "Ballerina_Cappuccina",
 		name = "Ballerina Cappuccina",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	ballerino_lololo = {
-		id = "ballerino_lololo",
+	Ballerino_Lololo = {
+		id = "Ballerino_Lololo",
 		name = "Ballerino Lololo",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	bambini_crostini = {
-		id = "bambini_crostini",
+	Bambini_Crostini = {
+		id = "Bambini_Crostini",
 		name = "Bambini Crostini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	bananita_dolphinita = {
-		id = "bananita_dolphinita",
+	Bananita_Dolphinita = {
+		id = "Bananita_Dolphinita",
 		name = "Bananita Dolphinita",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	bandito_bobritto = {
-		id = "bandito_bobritto",
+	Bandito_Bobritto = {
+		id = "Bandito_Bobritto",
 		name = "Bandito Bobritto",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	blueberrinni_octopusini = {
-		id = "blueberrinni_octopusini",
+	Blueberrinni_Octopusini = {
+		id = "Blueberrinni_Octopusini",
 		name = "Blueberrinni Octopusini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	avocadini_guffo = {
-		id = "avocadini_guffo",
+	Avocadini_Guffo = {
+		id = "Avocadini_Guffo",
 		name = "Avocadini Guffo",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	gattatino_neonino = {
-		id = "gattatino_neonino",
+	Gattatino_Neonino = {
+		id = "Gattatino_Neonino",
 		name = "Gattatino Neonino",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	gattatino_nyanino = {
-		id = "gattatino_nyanino",
+	Gattatino_Nyanino = {
+		id = "Gattatino_Nyanino",
 		name = "Gattatino Nyanino",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	girafa_celestre = {
-		id = "girafa_celestre",
+	Girafa_Celestre = {
+		id = "Girafa_Celestre",
 		name = "Girafa Celestre",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	graipuss_medussi = {
-		id = "graipuss_medussi",
+	Graipuss_Medussi = {
+		id = "Graipuss_Medussi",
 		name = "Graipuss Medussi",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	lionel_cactuseli = {
-		id = "lionel_cactuseli",
+	Lionel_Cactuseli = {
+		id = "Lionel_Cactuseli",
 		name = "Lionel Cactuseli",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	noobini_pizzanini = {
-		id = "noobini_pizzanini",
+	Noobini_Pizzanini = {
+		id = "Noobini_Pizzanini",
 		name = "Noobini Pizzanini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	perochello_lemonchello = {
-		id = "perochello_lemonchello",
+	Perochello_Lemonchello = {
+		id = "Perochello_Lemonchello",
 		name = "Perochello Lemonchello",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	piccione_macchina = {
-		id = "piccione_macchina",
+	Piccione_Macchina = {
+		id = "Piccione_Macchina",
 		name = "Piccione Macchina",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	pipi_kiwi = {
-		id = "pipi_kiwi",
+	Pipi_Kiwi = {
+		id = "Pipi_Kiwi",
 		name = "Pipi Kiwi",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	rhino_toasterino = {
-		id = "rhino_toasterino",
+	Rhino_Toasterino = {
+		id = "Rhino_Toasterino",
 		name = "Rhino Toasterino",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	salamino_penguino = {
-		id = "salamino_penguino",
+	Salamino_Penguino = {
+		id = "Salamino_Penguino",
 		name = "Salamino Penguino",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	sammyni_spyderini = {
-		id = "sammyni_spyderini",
+	Sammyni_Spyderini = {
+		id = "Sammyni_Spyderini",
 		name = "Sammyni Spyderini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	spioniro_golubiro = {
-		id = "spioniro_golubiro",
+	Spioniro_Golubiro = {
+		id = "Spioniro_Golubiro",
 		name = "Spioniro Golubiro",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	statutino_libertino = {
-		id = "statutino_libertino",
+	Statutino_Libertino = {
+		id = "Statutino_Libertino",
 		name = "Statutino Libertino",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	strawberrelli_flamingelli = {
-		id = "strawberrelli_flamingelli",
+	Strawberrelli_Flamingelli = {
+		id = "Strawberrelli_Flamingelli",
 		name = "Strawberrelli Flamingelli",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	talpa_di_fero = {
-		id = "talpa_di_fero",
+	Talpa_Di_Fero = {
+		id = "Talpa_Di_Fero",
 		name = "Talpa Di Fero",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	tigrilini_watermelini = {
-		id = "tigrilini_watermelini",
+	Tigrilini_Watermelini = {
+		id = "Tigrilini_Watermelini",
 		name = "Tigrilini Watermelini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	tigroligre_frutonni = {
-		id = "tigroligre_frutonni",
+	Tigroligre_Frutonni = {
+		id = "Tigroligre_Frutonni",
 		name = "Tigroligre Frutonni",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	torrtuginni_dragonfrutini = {
-		id = "torrtuginni_dragonfrutini",
+	Torrtuginni_Dragonfrutini = {
+		id = "Torrtuginni_Dragonfrutini",
 		name = "Torrtuginni Dragonfrutini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	unclito_samito = {
-		id = "unclito_samito",
+	Unclito_Samito = {
+		id = "Unclito_Samito",
 		name = "Unclito Samito",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	zibra_zubra_zibralini = {
-		id = "zibra_zubra_zibralini",
+	Zibra_Zubra_Zibralini = {
+		id = "Zibra_Zubra_Zibralini",
 		name = "Zibra Zubra Zibralini",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 3,
 	},
-	cacto_hipopotamo = {
-		id = "cacto_hipopotamo",
+	Cacto_Hipopotamo = {
+		id = "Cacto_Hipopotamo",
 		name = "Cacto Hipopotamo",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 2,
 	},
-	chicleteira_bicicleteira = {
-		id = "chicleteira_bicicleteira",
+	Chicleteira_Bicicleteira = {
+		id = "Chicleteira_Bicicleteira",
 		name = "Chicleteira Bicicleteira",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 2,
 	},
-	fluri_flura = {
-		id = "fluri_flura",
-		name = "Fluri Flura",
+	Fluri_flura = {
+		id = "Fluri_flura",
+		name = "Fluri flura",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 2,
 	},
-	frigo_camelo = {
-		id = "frigo_camelo",
+	Frigo_Camelo = {
+		id = "Frigo_Camelo",
 		name = "Frigo Camelo",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 2,
 	},
-	gangster_footera = {
-		id = "gangster_footera",
+	Gangster_Footera = {
+		id = "Gangster_Footera",
 		name = "Gangster Footera",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 2,
 	},
-	mat_teo = {
-		id = "mat_teo",
-		name = "Mat Teo",
+	Mat_teo = {
+		id = "Mat_teo",
+		name = "Mat teo",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 2,
 	},
-	orcalero_orcala = {
-		id = "orcalero_orcala",
+	Orcalero_Orcala = {
+		id = "Orcalero_Orcala",
 		name = "Orcalero Orcala",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 2,
 	},
-	pot_hotspot = {
-		id = "pot_hotspot",
+	Pot_Hotspot = {
+		id = "Pot_Hotspot",
 		name = "Pot Hotspot",
 		rarity = "Common",
 		level = 1,
 		incomePerSecond = 2,
 	},
-	tim_cheese = {
-		id = "tim_cheese",
+	Tim_Cheese = {
+		id = "Tim_Cheese",
 		name = "Tim Cheese",
 		rarity = "Common",
 		level = 1,
