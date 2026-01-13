@@ -20,3 +20,7 @@ Thumbs.db
 /*.rbxl.lock
 
 sourcemap.json
+
+# Wally packages (generated from wally.lock)
+/Packages/
+/ServerPackages/
