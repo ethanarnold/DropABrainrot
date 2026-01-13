@@ -8,6 +8,7 @@
 	- /spawnat <brainrotId> <x> <y> <z> - Spawns at specific position
 	- /clearbrainrots - Removes all spawned brainrots
 	- /givecurrency <amount> - Adds currency (for testing)
+	- /fly - Toggles fly mode
 ]]
 
 local Players = game:GetService("Players")
@@ -18,11 +19,15 @@ local RunService = game:GetService("RunService")
 
 local CurrencyService = require(script.Parent.CurrencyService)
 local Brainrots = require(ReplicatedStorage.Shared.Data.Brainrots)
+local Remotes = require(ReplicatedStorage.Shared.Remotes)
 
 local DebugService = {}
 
 -- Folder for spawned brainrots
 local SPAWNED_FOLDER_NAME = "SpawnedBrainrots"
+
+-- Track fly state per player
+local flyingPlayers: { [Player]: boolean } = {}
 
 -- Authorized user IDs (add your user ID here for production)
 -- In Studio, everyone is authorized for easier testing
@@ -189,6 +194,13 @@ local function onPlayerChatted(player: Player, message: string)
 		for id, def in Brainrots do
 			print(`  {id} - {def.name} ({def.rarity}, Level {def.level})`)
 		end
+	elseif command == "/fly" then
+		local isFlying = flyingPlayers[player] or false
+		isFlying = not isFlying
+		flyingPlayers[player] = isFlying
+
+		Remotes.ToggleFly:FireClient(player, isFlying)
+		print(`[DebugService] Fly mode {isFlying and "enabled" or "disabled"} for {player.Name}`)
 	end
 end
 
@@ -211,6 +223,11 @@ function DebugService.init()
 	-- Connect to player chat
 	Players.PlayerAdded:Connect(onPlayerAdded)
 
+	-- Clean up fly state when player leaves
+	Players.PlayerRemoving:Connect(function(player)
+		flyingPlayers[player] = nil
+	end)
+
 	-- Handle existing players (Studio edge case)
 	for _, player in Players:GetPlayers() do
 		onPlayerAdded(player)
@@ -218,7 +235,7 @@ function DebugService.init()
 
 	if IS_STUDIO then
 		print("[DebugService] Initialized (Studio mode - all users authorized)")
-		print("[DebugService] Commands: /spawn, /spawnat, /clearbrainrots, /givecurrency, /listbrainrots")
+		print("[DebugService] Commands: /spawn, /spawnat, /clearbrainrots, /givecurrency, /listbrainrots, /fly")
 	else
 		print("[DebugService] Initialized")
 	end
