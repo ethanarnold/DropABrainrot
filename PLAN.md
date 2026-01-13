@@ -9,60 +9,109 @@ This plan tracks implementation progress across multiple sessions.
   - [x] Bag definitions (level, capacity, maxBrainrotLevel)
   - [x] Upgrade definitions (costs, effects)
 - [x] Create PlayerData module
-  - [x] Data schema (currency, bagLevel, bagContents, plotSlots, placedBrainrots, upgrades)
+  - [x] Data schema (currency, bagLevel, inventory, plotSlots, placedBrainrots, upgrades)
   - [x] Default player data template
 - [x] Implement DataStore persistence on server
   - [x] Load on PlayerAdded
   - [x] Save on PlayerRemoving and periodic autosave
   - [x] Session locking to prevent data loss (via ProfileService)
 
-## Phase 2: Core Systems
+## Phase 2: Core Systems ✅
 
-### Bag System
-- [ ] Server: BagService
-  - [ ] Track bag contents per player
-  - [ ] Add/remove brainrots from bag
-  - [ ] Validate pickup (check bag level vs brainrot level, capacity)
-- [ ] Client: Bag UI
-  - [ ] Display current bag contents
-  - [ ] Show capacity (e.g., 3/5)
+> **Clarification:** The bag is an upgradable **tool** that determines pickup eligibility and inventory capacity.
+> Bag level determines: (1) which brainrot levels can be picked up (brainrot.level <= bagLevel), (2) inventory capacity.
+> Brainrots are stored in the player's **inventory**, not in the bag itself.
 
-### Plot System
-- [ ] Server: PlotService
-  - [ ] Assign plots to players on join
-  - [ ] Track placed brainrots per slot
-  - [ ] Handle placement requests (validate slot availability, remove from bag)
-- [ ] Shared: Income calculation logic
-- [ ] Server: Passive income accumulation
+### Schema Updates
+- [x] Rename `bagContents` → `inventory` in Types.luau and PlayerData.luau
 
-### Currency System
-- [ ] Server: CurrencyService
-  - [ ] Add/subtract currency with validation
-  - [ ] Replicate currency to client
-- [ ] Client: Currency display UI
+### Communication Layer
+- [x] Create `src/shared/Remotes.luau` - Centralized RemoteEvents/RemoteFunctions
+  - Client→Server: PickupBrainrot, PlaceBrainrot, RemoveBrainrot, CollectIncome
+  - Server→Client: CurrencyUpdated, InventoryUpdated, PlotUpdated, ShowMessage
+  - Request/Response: GetPlayerData, GetInventory, GetPlotState
+
+### Server Services
+- [x] CurrencyService (`src/server/Services/CurrencyService.luau`)
+  - [x] add(player, amount) - Add currency, fire CurrencyUpdated
+  - [x] spend(player, amount) - Spend if sufficient
+  - [x] get(player) - Get current balance
+- [x] BagService (`src/server/Services/BagService.luau`)
+  - [x] canPickup(player, brainrotId) - Validate level + capacity
+  - [x] addToInventory(player, brainrotId) - Add to inventory
+  - [x] removeFromInventory(player, index) - Remove from inventory
+  - [x] Handle PickupBrainrot remote (validate brainrot exists in workspace.SpawnedBrainrots)
+- [x] PlotService (`src/server/Services/PlotService.luau`)
+  - [x] placeBrainrot(player, inventoryIndex, slotIndex)
+  - [x] removeBrainrot(player, slotIndex)
+  - [x] calculateIncome(player) - Sum incomePerSecond * elapsed * multiplier
+  - [x] collectIncome(player) - Triggered by Touched event on plot Part
+- [x] DebugService (`src/server/Services/DebugService.luau`)
+  - [x] Admin command to spawn test brainrots into workspace.SpawnedBrainrots
+
+### Client Services
+- [x] ClientDataService (`src/client/Services/ClientDataService.luau`)
+  - [x] Cache player data locally
+  - [x] Listen to update events (CurrencyUpdated, InventoryUpdated, PlotUpdated)
+  - [x] Expose data getters and change signals
+
+### Client Controllers
+- [x] PickupController (`src/client/Controllers/PickupController.luau`)
+  - [x] Right-click (Button2Down) to pick up brainrot
+  - [x] Raycast to detect brainrot in workspace.SpawnedBrainrots
+- [x] PlotController (`src/client/Controllers/PlotController.luau`)
+  - [x] Click plot slot to open inventory for placement
+  - [x] Fire PlaceBrainrot/RemoveBrainrot remotes
+
+### Client UI
+- [x] CurrencyDisplay (`src/client/UI/CurrencyDisplay.luau`)
+  - [x] TextLabel showing current currency
+- [x] InventoryUI (`src/client/UI/InventoryUI.luau`)
+  - [x] Grid showing inventory contents
+  - [x] Show capacity (e.g., 3/5)
+  - [x] Popup mode for placement selection
+- [x] MessageDisplay (`src/client/UI/MessageDisplay.luau`)
+  - [x] Toast messages ("Bag level too low!", "Inventory full!")
+
+### Init Scripts
+- [x] Update `src/server/init.server.luau` - Initialize all services
+- [x] Update `src/client/init.client.luau` - Initialize services, controllers, UI
 
 ## Phase 3: World Mechanics
+
+> **Note:** Pickup system was moved to Phase 2. Phase 3 focuses on automated spawning.
 
 ### Brainrot Tank & Spawning
 - [ ] Server: TankService
   - [ ] Explosion timer (configurable interval)
-  - [ ] Spawn brainrot instances on explosion
+  - [ ] Spawn brainrot instances into workspace.SpawnedBrainrots
+  - [ ] Weighted random selection based on rarity
   - [ ] Scatter physics/positioning in catch area
   - [ ] Despawn uncollected brainrots after timeout
 - [ ] Client: Visual/audio effects for explosion
 
-### Brainrot Pickup
-- [ ] Server: Pickup detection and validation
-  - [ ] Proximity check (player near brainrot)
-  - [ ] Bag level/capacity validation
-  - [ ] Transfer brainrot to player's bag
-- [ ] Client: Pickup prompt UI
-- [ ] Client: Visual feedback on successful pickup
+### Plot Integration (World <-> Data)
+> **Note:** PlotService handles data (placement, income calculation). This section connects it to physical plots.
 
-### Income Collection
-- [ ] Server: Detect player walking over their plot platform
-- [ ] Server: Transfer accumulated income to currency
-- [ ] Client: Visual feedback (coins flying, sound)
+- [ ] Define plot structure in world
+  - [ ] Determine where plots live (workspace folder? Per-player instances?)
+  - [ ] Define slot identification (Part names, Attributes, or ClickDetectors?)
+  - [ ] Define income collection zone (Part with Touched event)
+- [ ] Server: Plot assignment on player join
+  - [ ] Assign physical plot to player
+  - [ ] Track player -> plot mapping
+- [ ] Server: Connect PlotService to physical plots
+  - [ ] Spawn brainrot model on slot when placed
+  - [ ] Remove brainrot model when removed from slot
+  - [ ] Connect collection zone Touched to PlotService.collectIncome
+- [ ] Client: Plot slot interaction
+  - [ ] Detect click on empty slot -> open InventoryUI in selection mode
+  - [ ] Detect click on occupied slot -> show remove option
+  - [ ] Visual highlighting when hovering over slots
+
+### Polish
+- [ ] Client: Visual feedback on successful pickup (particles, sound)
+- [ ] Client: Income collection effects (coins flying, sound)
 
 ## Phase 4: Shops & Upgrades
 
@@ -122,3 +171,15 @@ _Use this section to track progress and leave notes for future sessions._
 - Implemented DataService with ProfileService integration
 - Updated server init to initialize DataService
 - **All tests passed:** Selene linting clean, Wally install successful, Rojo sync verified, DataService initializes correctly, player profiles load on join. ProfileService gracefully falls back to mock mode in Studio (expected behavior).
+
+**Session 3:** Completed Phase 2 (Core Systems):
+- Clarified bag mechanics: bag is a tool that determines pickup eligibility + inventory capacity (not a container)
+- Renamed `bagContents` → `inventory` in schema
+- Created `Remotes.luau` for centralized client-server communication
+- Created server services: CurrencyService, BagService, PlotService, DebugService
+- Created client service: ClientDataService for local data caching
+- Created client controllers: PickupController (right-click pickup), PlotController (plot interaction)
+- Created client UI: CurrencyDisplay, InventoryUI (toggle with 'I'), MessageDisplay (toast messages)
+- Updated init scripts for both server and client
+- **Debug commands available:** `/spawn <brainrotId>`, `/spawnat`, `/clearbrainrots`, `/givecurrency`, `/listbrainrots`
+- **Selene lint:** 0 errors, 0 warnings

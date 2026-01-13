@@ -51,9 +51,9 @@ export type PlayerData = {
 	-- Currency
 	currency: number,
 
-	-- Bag
+	-- Bag (level determines pickup eligibility and inventory capacity)
 	bagLevel: number,
-	bagContents: { BrainrotId },
+	inventory: { BrainrotId },
 
 	-- Plot
 	plotSlots: number,
