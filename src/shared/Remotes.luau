@@ -16,6 +16,7 @@ type RemoteTable = {
 	PlaceBrainrot: RemoteEvent,
 	RemoveBrainrot: RemoteEvent,
 	CollectIncome: RemoteEvent,
+	SpawnRandomBrainrot: RemoteEvent,
 
 	-- Server to Client events
 	CurrencyUpdated: RemoteEvent,
@@ -37,6 +38,7 @@ local REMOTE_EVENTS = {
 	"PlaceBrainrot", -- (inventoryIndex: number, slotIndex: number) - Place on plot
 	"RemoveBrainrot", -- (slotIndex: number) - Remove from plot back to inventory
 	"CollectIncome", -- () - Collect accumulated income
+	"SpawnRandomBrainrot", -- () - Request random brainrot spawn
 
 	-- Server to Client
 	"CurrencyUpdated", -- (newBalance: number) - Currency changed

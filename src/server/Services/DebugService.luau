@@ -26,8 +26,24 @@ local DebugService = {}
 -- Folder for spawned brainrots
 local SPAWNED_FOLDER_NAME = "SpawnedBrainrots"
 
+-- Rarity spawn weights (percentages)
+local RARITY_WEIGHTS = {
+	Common = 75,
+	Uncommon = 20,
+	Rare = 4,
+	Epic = 0.9,
+	Legendary = 0.09,
+	Mythic = 0.01,
+}
+
+-- Spawn cooldown
+local SPAWN_COOLDOWN = 0.2 -- seconds
+
 -- Track fly state per player
 local flyingPlayers: { [Player]: boolean } = {}
+
+-- Track last spawn time per player
+local lastSpawnTime: { [Player]: number } = {}
 
 -- Authorized user IDs (add your user ID here for production)
 -- In Studio, everyone is authorized for easier testing
@@ -49,6 +65,50 @@ local function isAuthorized(player: Player): boolean
 	end
 
 	return AUTHORIZED_USERS[player.UserId] == true
+end
+
+--[[
+	Selects a random brainrot ID based on rarity weights.
+]]
+local function selectWeightedRandomBrainrot(): string
+	-- Group brainrots by rarity
+	local brainrotsByRarity: { [string]: { string } } = {}
+	for id, def in Brainrots do
+		local rarity = def.rarity
+		if not brainrotsByRarity[rarity] then
+			brainrotsByRarity[rarity] = {}
+		end
+		table.insert(brainrotsByRarity[rarity], id)
+	end
+
+	-- Calculate total weight
+	local totalWeight = 0
+	for rarity, weight in RARITY_WEIGHTS do
+		if brainrotsByRarity[rarity] and #brainrotsByRarity[rarity] > 0 then
+			totalWeight = totalWeight + weight
+		end
+	end
+
+	-- Roll a random number between 0 and totalWeight
+	local roll = math.random() * totalWeight
+
+	-- Find which rarity was selected
+	local cumulative = 0
+	local selectedRarity = "Common" -- fallback
+	for rarity, weight in RARITY_WEIGHTS do
+		if brainrotsByRarity[rarity] and #brainrotsByRarity[rarity] > 0 then
+			cumulative = cumulative + weight
+			if roll <= cumulative then
+				selectedRarity = rarity
+				break
+			end
+		end
+	end
+
+	-- Select a random brainrot from that rarity
+	local candidates = brainrotsByRarity[selectedRarity]
+	local randomIndex = math.random(1, #candidates)
+	return candidates[randomIndex]
 end
 
 --[[
@@ -223,9 +283,27 @@ function DebugService.init()
 	-- Connect to player chat
 	Players.PlayerAdded:Connect(onPlayerAdded)
 
-	-- Clean up fly state when player leaves
+	-- Clean up state when player leaves
 	Players.PlayerRemoving:Connect(function(player)
 		flyingPlayers[player] = nil
+		lastSpawnTime[player] = nil
+	end)
+
+	-- Handle random spawn requests from clients
+	Remotes.SpawnRandomBrainrot.OnServerEvent:Connect(function(player: Player)
+		local now = os.clock()
+		if lastSpawnTime[player] and (now - lastSpawnTime[player]) < SPAWN_COOLDOWN then
+			return -- Too soon, ignore
+		end
+		lastSpawnTime[player] = now
+
+		local brainrotId = selectWeightedRandomBrainrot()
+		local spawnPosition = Vector3.new(0, 170, 0)
+
+		local spawned = DebugService.spawnBrainrot(brainrotId, spawnPosition)
+		if spawned then
+			print(`[DebugService] {player.Name} spawned random brainrot: {brainrotId}`)
+		end
 	end)
 
 	-- Handle existing players (Studio edge case)
